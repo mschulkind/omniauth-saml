@@ -30,6 +30,7 @@ module OmniAuth
         end
 
         response = Onelogin::Saml::Response.new(request.params['SAMLResponse'], options)
+        puts response.response
         response.settings = Onelogin::Saml::Settings.new(options)
 
         @name_id = response.name_id
